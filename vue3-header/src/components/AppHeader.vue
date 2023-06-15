@@ -1,15 +1,25 @@
 <script>
 export default {
-    
+    data(){
+        return{
+            links: [
+                {ref: '#', link: 'Link 1'},
+                {ref: '#', link: 'Link 2'},
+                {ref: '#', link: 'Link 3'},
+                {ref: '#', link: 'Link 4'},
+            ],
+        }
+    },
+
+    methods: {
+        
+    },
 }
 </script>
 
 <template>
-    <div>
-        <a href="#">Link 1</a>
-        <a href="#">Link 1</a>
-        <a href="#">Link 1</a>
-        <a href="#">Link 1</a>
+    <div v-for="link in links">
+        <a :href="link.ref">{{link.link}}</a> <br>
     </div>
 </template>
 
